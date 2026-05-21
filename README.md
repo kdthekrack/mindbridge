@@ -69,7 +69,21 @@ Interactive wellness analytics including:
 - Behavioral insights
 
 ---
+# 📸 Screenshots
 
+## Login Interface
+
+![Login](screenshots/login.png)
+
+## AI Chat Interface
+
+![Chat](screenshots/chat.png)
+
+## Emotional Analytics Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
 # 🏗️ Architecture
 
 MindBridge uses a modular AI system architecture.
