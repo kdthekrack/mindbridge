@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        MindBridge Dashboard
+    </title>
+
+    <!-- ================================================= -->
+    <!-- GOOGLE FONT -->
+    <!-- ================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ================================================= -->
+    <!-- CHART.JS -->
+    <!-- ================================================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- ================================================= -->
+    <!-- CSS -->
+    <!-- ================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
+
+    <nav class="navbar">
+
+        <div class="navbar-left">
+
+            <div class="navbar-logo">
+
+                🧠 MindBridge
+
+            </div>
+
+        </div>
+
+        <div class="navbar-right">
+
+            <span class="username-badge">
+
+                {{ username }}
+
+            </span>
+
+            <a
+                href="/chat"
+                class="nav-link"
+            >
+
+                Chat
+
+            </a>
+
+            <a
+                href="/logout"
+                class="nav-link logout-link"
+            >
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- ================================================= -->
+    <!-- DASHBOARD -->
+    <!-- ================================================= -->
+
+    <main class="dashboard-page">
+
+        <!-- ============================================= -->
+        <!-- HEADER -->
+        <!-- ============================================= -->
+
+        <section class="dashboard-header">
+
+            <h1>
+
+                Emotional Wellness Dashboard
+
+            </h1>
+
+            <p>
+
+                Explore emotional trends,
+                emotional diversity,
+                and conversational wellness insights.
+
+            </p>
+
+        </section>
+
+        <!-- ============================================= -->
+        <!-- STATS GRID -->
+        <!-- ============================================= -->
+
+        <section class="stats-grid">
+
+            <div class="stats-card">
+
+                <div class="stats-title">
+
+                    Total Conversations
+
+                </div>
+
+                <div
+                    id="total-messages"
+                    class="stats-value"
+                >
+
+                    --
+
+                </div>
+
+            </div>
+
+            <div class="stats-card">
+
+                <div class="stats-title">
+
+                    Dominant Emotion
+
+                </div>
+
+                <div
+                    id="dominant-emotion"
+                    class="stats-value"
+                >
+
+                    --
+
+                </div>
+
+            </div>
+
+            <div class="stats-card">
+
+                <div class="stats-title">
+
+                    Avg Confidence
+
+                </div>
+
+                <div
+                    id="avg-confidence"
+                    class="stats-value"
+                >
+
+                    --
+
+                </div>
+
+            </div>
+
+            <div class="stats-card">
+
+                <div class="stats-title">
+
+                    Emotional Diversity
+
+                </div>
+
+                <div
+                    id="emotional-diversity"
+                    class="stats-value"
+                >
+
+                    --
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ============================================= -->
+        <!-- CHARTS -->
+        <!-- ============================================= -->
+
+        <section class="charts-grid">
+
+            <!-- ========================================= -->
+            <!-- EMOTION DISTRIBUTION -->
+            <!-- ========================================= -->
+
+            <div class="chart-card">
+
+                <h2>
+
+                    Emotion Distribution
+
+                </h2>
+
+                <canvas
+                    id="emotionChart"
+                ></canvas>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- CONFIDENCE TREND -->
+            <!-- ========================================= -->
+
+            <div class="chart-card">
+
+                <h2>
+
+                    Confidence Trend
+
+                </h2>
+
+                <canvas
+                    id="confidenceChart"
+                ></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- ============================================= -->
+        <!-- RECENT ACTIVITY -->
+        <!-- ============================================= -->
+
+        <section class="activity-section">
+
+            <div class="activity-card">
+
+                <h2>
+
+                    Recent Emotional Activity
+
+                </h2>
+
+                <div
+                    id="recent-activity"
+                    class="activity-list"
+                >
+
+                    Loading...
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================================================= -->
+    <!-- DASHBOARD SCRIPT -->
+    <!-- ================================================= -->
+
+    <script
+        src="{{ url_for('static', filename='dashboard.js') }}"
+    ></script>
+
+</body>
+
+</html>

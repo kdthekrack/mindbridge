@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        MindBridge Chat
+    </title>
+
+    <!-- ================================================= -->
+    <!-- GOOGLE FONT -->
+    <!-- ================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ================================================= -->
+    <!-- MAIN CSS -->
+    <!-- ================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
+
+    <nav class="navbar">
+
+        <div class="navbar-left">
+
+            <div class="navbar-logo">
+
+                🧠 MindBridge
+
+            </div>
+
+        </div>
+
+        <div class="navbar-right">
+
+            <span class="username-badge">
+
+                {{ username }}
+
+            </span>
+
+            <a
+                href="/dashboard"
+                class="nav-link"
+            >
+
+                Dashboard
+
+            </a>
+
+            <a
+                href="/logout"
+                class="nav-link logout-link"
+            >
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- ================================================= -->
+    <!-- MAIN CHAT -->
+    <!-- ================================================= -->
+
+    <main class="chat-page">
+
+        <!-- ============================================= -->
+        <!-- CHAT CONTAINER -->
+        <!-- ============================================= -->
+
+        <section class="chat-container">
+
+            <!-- ========================================= -->
+            <!-- CHAT HEADER -->
+            <!-- ========================================= -->
+
+            <div class="chat-header">
+
+                <h1>
+
+                    Welcome to MindBridge
+
+                </h1>
+
+                <p>
+
+                    A supportive AI companion designed
+                    to help you reflect, express,
+                    and understand your emotions.
+
+                </p>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- CRISIS BANNER -->
+            <!-- ========================================= -->
+
+            <div
+                id="crisis-banner"
+                class="crisis-banner"
+            >
+
+                🚨 Immediate emotional support is available.
+
+                <br><br>
+
+                📞 iCall: 9152987821
+
+                <br>
+
+                📞 Vandrevala Foundation:
+                1860-2662-345
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- CHAT WINDOW -->
+            <!-- ========================================= -->
+
+            <div
+                id="chat-window"
+                class="chat-window"
+            >
+
+                <!-- Initial Bot Message -->
+
+                <div class="message bot-message">
+
+                    <div class="message-avatar">
+
+                        🧠
+
+                    </div>
+
+                    <div class="message-content">
+
+                        <div class="message-bubble">
+
+                            Hello {{ username }} 👋
+
+                            <br><br>
+
+                            I'm here to listen and support you.
+
+                            How are you feeling today?
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- TYPING INDICATOR -->
+            <!-- ========================================= -->
+
+            <div
+                id="typing-indicator"
+                class="typing-indicator"
+            >
+
+                <div class="typing-dots">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <span>
+
+                    MindBridge is thinking...
+
+                </span>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- INPUT AREA -->
+            <!-- ========================================= -->
+
+            <div class="chat-input-container">
+
+                <input
+                    type="text"
+
+                    id="message-input"
+
+                    class="message-input"
+
+                    placeholder=
+                    "Share your thoughts..."
+
+                    autocomplete="off"
+                >
+
+                <button
+                    id="send-button"
+                    class="send-button"
+                >
+
+                    Send
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================================================= -->
+    <!-- USERNAME -->
+    <!-- ================================================= -->
+
+    <script>
+
+        const username =
+            "{{ username }}";
+
+    </script>
+
+    <!-- ================================================= -->
+    <!-- MAIN SCRIPT -->
+    <!-- ================================================= -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>

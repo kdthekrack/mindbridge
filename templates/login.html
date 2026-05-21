@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        MindBridge Login
+    </title>
+
+    <!-- ================================================= -->
+    <!-- GOOGLE FONT -->
+    <!-- ================================================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- ================================================= -->
+    <!-- MAIN CSS -->
+    <!-- ================================================= -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body class="login-body">
+
+    <!-- ================================================= -->
+    <!-- BACKGROUND GLOW -->
+    <!-- ================================================= -->
+
+    <div class="bg-glow glow-1"></div>
+
+    <div class="bg-glow glow-2"></div>
+
+    <!-- ================================================= -->
+    <!-- LOGIN CONTAINER -->
+    <!-- ================================================= -->
+
+    <div class="login-wrapper">
+
+        <div class="login-card">
+
+            <!-- ========================================= -->
+            <!-- LOGO -->
+            <!-- ========================================= -->
+
+            <div class="logo">
+
+                🧠
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- TITLE -->
+            <!-- ========================================= -->
+
+            <h1 class="login-title">
+
+                MindBridge
+
+            </h1>
+
+            <!-- ========================================= -->
+            <!-- SUBTITLE -->
+            <!-- ========================================= -->
+
+            <p class="login-subtitle">
+
+                Your AI-powered emotional wellness companion.
+
+                <br><br>
+
+                A safe space to reflect, express,
+                and better understand your emotions.
+
+            </p>
+
+            <!-- ========================================= -->
+            <!-- LOGIN FORM -->
+            <!-- ========================================= -->
+
+            <form
+                method="POST"
+                action="/login"
+                class="login-form"
+            >
+
+                <div class="form-group">
+
+                    <label for="username">
+
+                        Your Name
+
+                    </label>
+
+                    <input
+                        type="text"
+
+                        id="username"
+
+                        name="username"
+
+                        placeholder="Enter your name"
+
+                        autocomplete="off"
+
+                        required
+
+                        autofocus
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+
+                    Start Conversation
+
+                </button>
+
+            </form>
+
+            <!-- ========================================= -->
+            <!-- FEATURES -->
+            <!-- ========================================= -->
+
+            <div class="features-grid">
+
+                <div class="feature-card">
+
+                    💬 AI Conversations
+
+                </div>
+
+                <div class="feature-card">
+
+                    🧠 Emotion Tracking
+
+                </div>
+
+                <div class="feature-card">
+
+                    📊 Wellness Analytics
+
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- FOOTER -->
+            <!-- ========================================= -->
+
+            <div class="login-footer">
+
+                MindBridge is designed for
+                emotional support and reflection.
+
+                <br>
+
+                It is not a replacement for
+                professional mental health care.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
