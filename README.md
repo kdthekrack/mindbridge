@@ -73,7 +73,7 @@ Interactive wellness analytics including:
 
 ## Sign Up Interface
 
-![Sign Up](screenshots/signup.png)
+![Sign Up](screenshots/Signup.png)
 
 ## Sign In Interface
 
