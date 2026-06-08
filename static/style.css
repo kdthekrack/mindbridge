@@ -191,6 +191,42 @@ body {
     gap: 20px;
 }
 
+.error-message {
+
+    padding: 14px 16px;
+
+    background: rgba(255, 95, 87, 0.12);
+
+    border: 1px solid rgba(255, 95, 87, 0.25);
+
+    color: #c53030;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+
+}
+
+.auth-action {
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 14px;
+
+}
+
+.auth-action a {
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+}
+
 .form-group {
 
     display: flex;
