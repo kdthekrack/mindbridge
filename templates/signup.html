@@ -60,164 +60,158 @@
     <!-- SIGNUP CONTAINER -->
     <!-- ================================================= -->
 
-    <div class="login-wrapper">
+    <div class="auth-wrapper">
 
-        <div class="login-card">
+        <div class="auth-grid">
 
-            <!-- ========================================= -->
-            <!-- LOGO -->
-            <!-- ========================================= -->
+            <aside class="auth-panel">
 
-            <div class="logo">
+                <div class="panel-badge">
 
-                🧠
-
-            </div>
-
-            <!-- ========================================= -->
-            <!-- TITLE -->
-            <!-- ========================================= -->
-
-            <h1 class="login-title">
-
-                Create Your Account
-
-            </h1>
-
-            <!-- ========================================= -->
-            <!-- SUBTITLE -->
-            <!-- ========================================= -->
-
-            <p class="login-subtitle">
-
-                Sign up to save your progress and keep your conversation history secure.
-
-            </p>
-
-            <!-- ========================================= -->
-            <!-- SIGNUP FORM -->
-            <!-- ========================================= -->
-
-            <form
-                method="POST"
-                action="/signup"
-                class="login-form"
-            >
-
-                {% if error %}
-                <div class="error-message">
-                    {{ error }}
-                </div>
-                {% endif %}
-
-                <div class="form-group">
-
-                    <label for="username">
-
-                        Username
-
-                    </label>
-
-                    <input
-                        type="text"
-
-                        id="username"
-
-                        name="username"
-
-                        placeholder="Choose a username"
-
-                        autocomplete="username"
-
-                        required
-
-                        autofocus
-                    >
+                    Care • Privacy • Growth
 
                 </div>
 
-                <div class="form-group">
+                <h2>Start your journey with MindBridge</h2>
 
-                    <label for="password">
+                <p class="panel-copy">
 
-                        Password
+                    Create your account to keep your conversations private, unlock insight tracking, and build a healthier emotional habit.
 
-                    </label>
+                </p>
 
-                    <input
-                        type="password"
+                <div class="panel-features">
 
-                        id="password"
+                    <div class="panel-feature">
 
-                        name="password"
+                        <span>🔐</span>
 
-                        placeholder="Create a password"
+                        Secure account storage and protected access
 
-                        autocomplete="new-password"
+                    </div>
 
-                        required
-                    >
+                    <div class="panel-feature">
+
+                        <span>✨</span>
+
+                        AI-guided support tailored to your mood
+
+                    </div>
+
+                    <div class="panel-feature">
+
+                        <span>📊</span>
+
+                        Personalized history and analytics
+
+                    </div>
 
                 </div>
 
-                <button
-                    type="submit"
-                    class="primary-btn"
+            </aside>
+
+            <section class="auth-card">
+
+                <div class="card-header">
+
+                    <div class="logo">🧠</div>
+
+                    <h1 class="card-title">Create account</h1>
+
+                    <p class="card-subtitle">
+
+                        Sign up with a username and password to get started.
+
+                    </p>
+
+                </div>
+
+                <form
+                    method="POST"
+                    action="/signup"
+                    class="login-form"
                 >
 
-                    Create Account
+                    {% if error %}
+                    <div class="error-message">
+                        {{ error }}
+                    </div>
+                    {% endif %}
 
-                </button>
+                    <div class="form-group">
 
-            </form>
+                        <label for="username">
 
-            <div class="auth-action">
+                            Username
 
-                Already have an account? <a href="/login">Sign in</a>
+                        </label>
 
-            </div>
+                        <input
+                            type="text"
 
-            <!-- ========================================= -->
-            <!-- FEATURES -->
-            <!-- ========================================= -->
+                            id="username"
 
-            <div class="features-grid">
+                            name="username"
 
-                <div class="feature-card">
+                            placeholder="Choose a username"
 
-                    💬 AI Conversations
+                            autocomplete="username"
+
+                            required
+
+                            autofocus
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password">
+
+                            Password
+
+                        </label>
+
+                        <input
+                            type="password"
+
+                            id="password"
+
+                            name="password"
+
+                            placeholder="Create a password"
+
+                            autocomplete="new-password"
+
+                            required
+                        >
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+
+                        Create Account
+
+                    </button>
+
+                </form>
+
+                <div class="auth-action">
+
+                    Already have an account? <a href="/login">Sign in</a>
 
                 </div>
 
-                <div class="feature-card">
+                <div class="login-footer">
 
-                    🧠 Emotion Tracking
-
-                </div>
-
-                <div class="feature-card">
-
-                    📊 Wellness Analytics
+                    MindBridge is designed for emotional support and self-reflection. It is not a replacement for professional care.
 
                 </div>
 
-            </div>
-
-            <!-- ========================================= -->
-            <!-- FOOTER -->
-            <!-- ========================================= -->
-
-            <div class="login-footer">
-
-                MindBridge is designed for
-                emotional support and reflection.
-
-                <br>
-
-                It is not a replacement for
-                professional mental health care.
-
-            </div>
+            </section>
 
         </div>
 

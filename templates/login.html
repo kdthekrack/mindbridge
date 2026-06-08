@@ -60,169 +60,158 @@
     <!-- LOGIN CONTAINER -->
     <!-- ================================================= -->
 
-    <div class="login-wrapper">
+    <div class="auth-wrapper">
 
-        <div class="login-card">
+        <div class="auth-grid">
 
-            <!-- ========================================= -->
-            <!-- LOGO -->
-            <!-- ========================================= -->
+            <aside class="auth-panel">
 
-            <div class="logo">
+                <div class="panel-badge">
 
-                🧠
-
-            </div>
-
-            <!-- ========================================= -->
-            <!-- TITLE -->
-            <!-- ========================================= -->
-
-            <h1 class="login-title">
-
-                MindBridge
-
-            </h1>
-
-            <!-- ========================================= -->
-            <!-- SUBTITLE -->
-            <!-- ========================================= -->
-
-            <p class="login-subtitle">
-
-                Your AI-powered emotional wellness companion.
-
-                <br><br>
-
-                A safe space to reflect, express,
-                and better understand your emotions.
-
-            </p>
-
-            <!-- ========================================= -->
-            <!-- LOGIN FORM -->
-            <!-- ========================================= -->
-
-            <form
-                method="POST"
-                action="/login"
-                class="login-form"
-            >
-
-                {% if error %}
-                <div class="error-message">
-                    {{ error }}
-                </div>
-                {% endif %}
-
-                <div class="form-group">
-
-                    <label for="username">
-
-                        Username
-
-                    </label>
-
-                    <input
-                        type="text"
-
-                        id="username"
-
-                        name="username"
-
-                        placeholder="Enter your username"
-
-                        autocomplete="username"
-
-                        required
-
-                        autofocus
-                    >
+                    Secure • Private • Compassionate
 
                 </div>
 
-                <div class="form-group">
+                <h2>Welcome back to MindBridge</h2>
 
-                    <label for="password">
+                <p class="panel-copy">
 
-                        Password
+                    Sign in to continue your guided emotional wellness journey, preserve your session history, and access personalized insights.
 
-                    </label>
+                </p>
 
-                    <input
-                        type="password"
+                <div class="panel-features">
 
-                        id="password"
+                    <div class="panel-feature">
 
-                        name="password"
+                        <span>🔒</span>
 
-                        placeholder="Enter your password"
+                        Encrypted passwords and private storage
 
-                        autocomplete="current-password"
+                    </div>
 
-                        required
-                    >
+                    <div class="panel-feature">
+
+                        <span>🧠</span>
+
+                        AI-powered reflection and mood support
+
+                    </div>
+
+                    <div class="panel-feature">
+
+                        <span>📈</span>
+
+                        Save conversations and track progress over time
+
+                    </div>
 
                 </div>
 
-                <button
-                    type="submit"
-                    class="primary-btn"
+            </aside>
+
+            <section class="auth-card">
+
+                <div class="card-header">
+
+                    <div class="logo">🧠</div>
+
+                    <h1 class="card-title">Sign in</h1>
+
+                    <p class="card-subtitle">
+
+                        Use your username and password to access your MindBridge workspace.
+
+                    </p>
+
+                </div>
+
+                <form
+                    method="POST"
+                    action="/login"
+                    class="login-form"
                 >
 
-                    Sign In
+                    {% if error %}
+                    <div class="error-message">
+                        {{ error }}
+                    </div>
+                    {% endif %}
 
-                </button>
+                    <div class="form-group">
 
-            </form>
+                        <label for="username">
 
-            <div class="auth-action">
+                            Username
 
-                New here? <a href="/signup">Create an account</a>
+                        </label>
 
-            </div>
+                        <input
+                            type="text"
 
-            <!-- ========================================= -->
-            <!-- FEATURES -->
-            <!-- ========================================= -->
+                            id="username"
 
-            <div class="features-grid">
+                            name="username"
 
-                <div class="feature-card">
+                            placeholder="Enter your username"
 
-                    💬 AI Conversations
+                            autocomplete="username"
+
+                            required
+
+                            autofocus
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="password">
+
+                            Password
+
+                        </label>
+
+                        <input
+                            type="password"
+
+                            id="password"
+
+                            name="password"
+
+                            placeholder="Enter your password"
+
+                            autocomplete="current-password"
+
+                            required
+                        >
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+
+                        Sign In
+
+                    </button>
+
+                </form>
+
+                <div class="auth-action">
+
+                    New here? <a href="/signup">Create an account</a>
 
                 </div>
 
-                <div class="feature-card">
+                <div class="login-footer">
 
-                    🧠 Emotion Tracking
-
-                </div>
-
-                <div class="feature-card">
-
-                    📊 Wellness Analytics
+                    MindBridge is designed for emotional support and self-reflection. It is not a replacement for professional care.
 
                 </div>
 
-            </div>
-
-            <!-- ========================================= -->
-            <!-- FOOTER -->
-            <!-- ========================================= -->
-
-            <div class="login-footer">
-
-                MindBridge is designed for
-                emotional support and reflection.
-
-                <br>
-
-                It is not a replacement for
-                professional mental health care.
-
-            </div>
+            </section>
 
         </div>
 
