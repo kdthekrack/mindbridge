@@ -24,7 +24,10 @@ load_dotenv()
 
 from database.db import (
 
-    init_db
+    init_db,
+    create_user,
+    get_user_by_username,
+    verify_user_credentials
 )
 
 # =========================================================
@@ -119,6 +122,18 @@ def home():
 
 def login():
 
+    if "username" in session:
+
+        return redirect(
+
+            url_for("chat_page")
+        )
+
+    error = request.args.get(
+        "message",
+        ""
+    )
+
     if request.method == "POST":
 
         username = (
@@ -130,7 +145,24 @@ def login():
             .strip()
         )
 
-        if username:
+        password = (
+
+            request.form.get(
+                "password",
+                ""
+            )
+        )
+
+        if not username or not password:
+
+            error = (
+                "Username and password are required."
+            )
+
+        elif verify_user_credentials(
+            username,
+            password
+        ):
 
             session["username"] = username
 
@@ -148,9 +180,112 @@ def login():
                 url_for("chat_page")
             )
 
+        else:
+
+            error = (
+                "Invalid username or password."
+            )
+
     return render_template(
 
-        "login.html"
+        "login.html",
+
+        error=error
+    )
+
+# =========================================================
+# SIGNUP PAGE
+
+@app.route(
+    "/signup",
+
+    methods=["GET", "POST"]
+)
+
+def signup():
+
+    if "username" in session:
+
+        return redirect(
+
+            url_for("chat_page")
+        )
+
+    error = ""
+
+    if request.method == "POST":
+
+        username = (
+
+            request.form.get(
+                "username",
+                ""
+            )
+            .strip()
+        )
+
+        password = (
+
+            request.form.get(
+                "password",
+                ""
+            )
+        )
+
+        if not username or not password:
+
+            error = (
+                "Username and password are required."
+            )
+
+        elif get_user_by_username(
+            username
+        ):
+
+            return redirect(
+
+                url_for(
+                    "login",
+                    message=(
+                        "Account already exists. "
+                        "Please sign in."
+                    )
+                )
+            )
+
+        elif create_user(
+            username,
+            password
+        ):
+
+            session["username"] = username
+
+            session[
+                "conversation_history"
+            ] = []
+
+            print(
+                f"✅ New user signed up: "
+                f"{username}"
+            )
+
+            return redirect(
+
+                url_for("chat_page")
+            )
+
+        else:
+
+            error = (
+                "Unable to create account. "
+                "Please try again."
+            )
+
+    return render_template(
+
+        "signup.html",
+
+        error=error
     )
 
 # =========================================================

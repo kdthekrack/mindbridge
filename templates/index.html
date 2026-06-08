@@ -100,86 +100,69 @@
 
     <main class="chat-page">
 
-        <!-- ============================================= -->
-        <!-- CHAT CONTAINER -->
-        <!-- ============================================= -->
+        <div class="chat-grid">
 
-        <section class="chat-container">
+            <section class="chat-panel">
 
-            <!-- ========================================= -->
-            <!-- CHAT HEADER -->
-            <!-- ========================================= -->
+                <div class="chat-header">
 
-            <div class="chat-header">
+                    <h1>
 
-                <h1>
+                        Welcome to MindBridge
 
-                    Welcome to MindBridge
+                    </h1>
 
-                </h1>
+                    <p>
 
-                <p>
+                        A supportive AI companion designed to help you explore your feelings, stay grounded, and discover new clarity.
 
-                    A supportive AI companion designed
-                    to help you reflect, express,
-                    and understand your emotions.
+                    </p>
 
-                </p>
+                </div>
 
-            </div>
+                <div
+                    id="crisis-banner"
+                    class="crisis-banner"
+                >
 
-            <!-- ========================================= -->
-            <!-- CRISIS BANNER -->
-            <!-- ========================================= -->
+                    🚨 Immediate emotional support is available.
 
-            <div
-                id="crisis-banner"
-                class="crisis-banner"
-            >
+                    <br><br>
 
-                🚨 Immediate emotional support is available.
+                    📞 iCall: 9152987821
 
-                <br><br>
+                    <br>
 
-                📞 iCall: 9152987821
+                    📞 Vandrevala Foundation: 1860-2662-345
 
-                <br>
+                </div>
 
-                📞 Vandrevala Foundation:
-                1860-2662-345
+                <div
+                    id="chat-window"
+                    class="chat-window"
+                >
 
-            </div>
+                    <div class="message bot-message">
 
-            <!-- ========================================= -->
-            <!-- CHAT WINDOW -->
-            <!-- ========================================= -->
+                        <div class="message-avatar">
 
-            <div
-                id="chat-window"
-                class="chat-window"
-            >
+                            🧠
 
-                <!-- Initial Bot Message -->
+                        </div>
 
-                <div class="message bot-message">
+                        <div class="message-content">
 
-                    <div class="message-avatar">
+                            <div class="message-bubble">
 
-                        🧠
+                                Hello {{ username }} 👋
 
-                    </div>
+                                <br><br>
 
-                    <div class="message-content">
+                                I'm here to listen and support you.
 
-                        <div class="message-bubble">
+                                How are you feeling today?
 
-                            Hello {{ username }} 👋
-
-                            <br><br>
-
-                            I'm here to listen and support you.
-
-                            How are you feeling today?
+                            </div>
 
                         </div>
 
@@ -187,64 +170,115 @@
 
                 </div>
 
-            </div>
+                <div
+                    id="typing-indicator"
+                    class="typing-indicator"
+                >
 
-            <!-- ========================================= -->
-            <!-- TYPING INDICATOR -->
-            <!-- ========================================= -->
+                    <div class="typing-dots">
 
-            <div
-                id="typing-indicator"
-                class="typing-indicator"
-            >
+                        <span></span>
+                        <span></span>
+                        <span></span>
 
-                <div class="typing-dots">
+                    </div>
 
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span>
+
+                        MindBridge is thinking...
+
+                    </span>
 
                 </div>
 
-                <span>
+                <div class="chat-input-container">
 
-                    MindBridge is thinking...
+                    <input
+                        type="text"
 
-                </span>
+                        id="message-input"
 
-            </div>
+                        class="message-input"
 
-            <!-- ========================================= -->
-            <!-- INPUT AREA -->
-            <!-- ========================================= -->
+                        placeholder="Share your thoughts..."
 
-            <div class="chat-input-container">
+                        autocomplete="off"
+                    >
 
-                <input
-                    type="text"
+                    <button
+                        id="send-button"
+                        class="send-button"
+                    >
 
-                    id="message-input"
+                        Send
 
-                    class="message-input"
+                    </button>
 
-                    placeholder=
-                    "Share your thoughts..."
+                </div>
 
-                    autocomplete="off"
-                >
+            </section>
 
-                <button
-                    id="send-button"
-                    class="send-button"
-                >
+            <aside class="chat-aside">
 
-                    Send
+                <div class="aside-card">
 
-                </button>
+                    <span class="status-pill">Daily Wellness</span>
 
-            </div>
+                    <h3>Check in with your mood</h3>
 
-        </section>
+                    <p>
+
+                        Use the chat to reflect on how you feel, then follow the suggested support prompts to stay grounded.
+
+                    </p>
+
+                </div>
+
+                <div class="aside-card">
+
+                    <h3>Try this prompt</h3>
+
+                    <p>
+
+                        “I’m feeling a little overwhelmed today. Can you help me sort through what I’m experiencing?”
+
+                    </p>
+
+                </div>
+
+                <div class="aside-card">
+
+                    <h3>Support resources</h3>
+
+                    <div class="aside-item">
+
+                        <h4>Self-care tip</h4>
+
+                        <span>
+
+                            Pause, breathe deeply, and tell yourself one thing you did well today.
+
+                        </span>
+
+                    </div>
+
+                    <div class="aside-item">
+
+                        <h4>Emergency contacts</h4>
+
+                        <span>
+
+                            📞 iCall: 9152987821 • Vandrevala: 1860-2662-345
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
 
     </main>
 

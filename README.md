@@ -71,9 +71,13 @@ Interactive wellness analytics including:
 ---
 # 📸 Screenshots
 
-## Login Interface
+## Sign Up Interface
 
-![Login](screenshots/login.png)
+![Sign Up](screenshots/signup.png)
+
+## Sign In Interface
+
+![Sign In](screenshots/signin.png)
 
 ## AI Chat Interface
 

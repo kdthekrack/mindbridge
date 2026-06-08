@@ -1,6 +1,10 @@
 import sqlite3
 from pathlib import Path
 from datetime import datetime, timedelta
+from werkzeug.security import (
+    check_password_hash,
+    generate_password_hash
+)
 
 # =========================================================
 # DATABASE LOCATION
@@ -63,6 +67,24 @@ def init_db():
             """)
 
             # =================================================
+            # USERS TABLE
+            # =================================================
+
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS users (
+
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+                    username TEXT NOT NULL UNIQUE,
+
+                    password_hash TEXT NOT NULL,
+
+                    created_at TIMESTAMP
+                    DEFAULT CURRENT_TIMESTAMP
+                )
+            """)
+
+            # =================================================
             # INDEXES
             # =================================================
 
@@ -88,6 +110,111 @@ def init_db():
     except Exception as e:
 
         print(f"❌ Database Initialization Error: {e}")
+
+# =========================================================
+# USER MANAGEMENT
+
+
+def create_user(
+    username,
+    password
+):
+
+    try:
+
+        with get_connection() as conn:
+
+            cursor = conn.cursor()
+
+            password_hash = (
+                generate_password_hash(
+                    password
+                )
+            )
+
+            cursor.execute("""
+                INSERT INTO users (
+                    username,
+                    password_hash
+                )
+                VALUES (?, ?)
+            """, (
+
+                username,
+                password_hash
+            ))
+
+            conn.commit()
+
+            return True
+
+    except sqlite3.IntegrityError:
+
+        return False
+
+    except Exception as e:
+
+        print(f"❌ Create User Error: {e}")
+
+        return False
+
+
+def get_user_by_username(
+    username
+):
+
+    try:
+
+        with get_connection() as conn:
+
+            cursor = conn.cursor()
+
+            cursor.execute("""
+                SELECT id,
+                       username,
+                       password_hash,
+                       created_at
+                FROM users
+                WHERE username = ?
+            """, (username,))
+
+            row = cursor.fetchone()
+
+            if not row:
+
+                return None
+
+            return {
+                "id": row["id"],
+                "username": row["username"],
+                "password_hash": row["password_hash"],
+                "created_at": row["created_at"]
+            }
+
+    except Exception as e:
+
+        print(f"❌ Get User Error: {e}")
+
+        return None
+
+
+def verify_user_credentials(
+    username,
+    password
+):
+
+    user = get_user_by_username(
+        username
+    )
+
+    if not user:
+
+        return False
+
+    return check_password_hash(
+        user["password_hash"],
+        password
+    )
 
 # =========================================================
 # SAVE CONVERSATION
